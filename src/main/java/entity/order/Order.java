@@ -10,14 +10,14 @@ import entity.media.Media;
 public class Order {
 
     private int shippingFees;
-    private List lstOrderMedia;
+    private List<OrderMedia> lstOrderMedia;
     private HashMap<String, String> deliveryInfo;
 
     public Order(){
         this.lstOrderMedia = new ArrayList<>();
     }
 
-    public Order(List lstOrderMedia) {
+    public Order(List<OrderMedia> lstOrderMedia) {
         this.lstOrderMedia = lstOrderMedia;
     }
 
@@ -33,7 +33,7 @@ public class Order {
         return this.lstOrderMedia;
     }
 
-    public void setlstOrderMedia(List lstOrderMedia) {
+    public void setlstOrderMedia(List<OrderMedia> lstOrderMedia) {
         this.lstOrderMedia = lstOrderMedia;
     }
 
@@ -59,7 +59,7 @@ public class Order {
             OrderMedia om = (OrderMedia) object;
             amount += om.getPrice();
         }
-        return (int) (amount + (10.0/100)*amount);
+        return (int) (amount + (10.0 / 100) * amount);
     }
 
 }
