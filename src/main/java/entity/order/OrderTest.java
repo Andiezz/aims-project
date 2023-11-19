@@ -10,6 +10,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class OrderTest {
     @Test
     public void testGetAmount() {
+        AIMSDB db = new AIMSDB();
         Order order = new Order();
 
         // Assuming OrderMedia constructor takes Media, quantity, and price
@@ -19,7 +20,7 @@ public class OrderTest {
         order.addOrderMedia(media1);
         order.addOrderMedia(media2);
 
-        int expectedAmount = (int) ((media1.getPrice() + media2.getPrice()) + (10.0/100)*(media1.getPrice() + media2.getPrice()));
+        int expectedAmount = (int) ((media1.getPrice() + media2.getPrice()) + (10.0 / 100) * (media1.getPrice() + media2.getPrice()));
         assertEquals(expectedAmount, order.getAmount(), "Total amount should be calculated correctly");
     }
 }
